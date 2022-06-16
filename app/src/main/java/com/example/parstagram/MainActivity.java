@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView etDescription;
     private Button btnCaptureImage;
     private ImageView ivPostImage;
+    private Button btnFeed;
     private Button btnSubmit;
     private Button logOut;
 
@@ -45,11 +46,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         etDescription = findViewById(R.id.etDescription);
+        btnFeed = findViewById(R.id.btnFeed);
         btnCaptureImage = findViewById(R.id.btnCaptureImage);
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
 
         logOut = findViewById(R.id.btnLogOut);
+
+        btnFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, FeedActivity.class);
+                startActivity(i);
+            }
+        });
 
         btnCaptureImage.setOnClickListener(new View.OnClickListener() {
             @Override
