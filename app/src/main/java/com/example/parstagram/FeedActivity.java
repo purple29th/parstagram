@@ -26,7 +26,7 @@ public class FeedActivity extends AppCompatActivity {
 
         rvPosts = findViewById(R.id.rvPosts);
         // Create adapter passing in the sample user data
-        adapter = new PostsAdapter();
+        adapter = new PostsAdapter(this);
         // Attach the adapter to the recyclerview to populate items
         rvPosts.setAdapter(adapter);
         // Set layout manager to position the items

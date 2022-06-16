@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +22,12 @@ public class PostsAdapter extends
 
     // Store a member variable for the contacts
     public List<Post> mPosts = new ArrayList<>();
+    private Context context;
+
+    // Pass in the context into the constructor
+    public PostsAdapter(Context context) {
+        this.context = context;
+    }
 
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
@@ -70,6 +78,10 @@ public class PostsAdapter extends
         holder.tvUsername.setText(post.getUser().getUsername());
         holder.tvTime.setText(post.getCreatedAt().toString());
         holder.tvDescription.setText(post.getDescription());
+
+        Glide.with(context)
+                .load(post.getImage().getUrl())
+                .into(holder.ivPhoto);
     }
 
     // Returns the total count of items in the list
