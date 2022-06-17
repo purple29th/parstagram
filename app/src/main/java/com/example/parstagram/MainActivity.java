@@ -56,11 +56,20 @@ public class MainActivity extends AppCompatActivity {
 
         logOut = findViewById(R.id.btnLogOut);
 
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // save the new post
+                String description = etDescription.getText().toString();
+                ParseUser user = ParseUser.getCurrentUser();
+                savePost(description, user);
+            }
+        });
+
         btnFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, FeedActivity.class);
-                startActivity(i);
+                goToFeedActivity();
             }
         });
 
@@ -78,6 +87,28 @@ public class MainActivity extends AppCompatActivity {
                 goLoginActivity();
             }
         });
+    }
+
+    private void savePost(String description, ParseUser user) {
+        Post post = new Post();
+        post.setDescription(description);
+        post.setUser(user);
+        post.setImage(new ParseFile(photoFile));
+        post.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    Toast.makeText(MainActivity.this, "Oh no, the post could not be saved.", Toast.LENGTH_SHORT).show();
+                } else {
+                    goToFeedActivity();
+                }
+            }
+        });
+    }
+
+    private void goToFeedActivity() {
+        Intent i = new Intent(MainActivity.this, FeedActivity.class);
+        startActivity(i);
     }
 
     void goLoginActivity() {
