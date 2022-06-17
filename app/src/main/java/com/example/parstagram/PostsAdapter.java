@@ -80,7 +80,7 @@ public class PostsAdapter extends
         holder.tvTime.setText(post.getCreatedAt().toString());
         holder.tvDescription.setText(post.getDescription());
 
-        holder.ivPhoto.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, DetailActivity.class);
