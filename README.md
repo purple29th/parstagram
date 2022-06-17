@@ -1,8 +1,10 @@
 # Project 3 - *PurpleGram*
 
 **PurpleGram** is a photo sharing app using Parse as its backend.
+![Kapture 2022-06-17 at 16 36 11](https://user-images.githubusercontent.com/105090910/174412753-13713404-188c-48a7-88b8-08f0accc37eb.gif)
 
-![Kapture 2022-06-17 at 14 05 30](https://user-images.githubusercontent.com/105090910/174401310-56af1c29-f982-4d9c-b0f2-7ba9eb8157e0.gif)
+
+
 
 
 Time spent: **25** hours spent in total
@@ -22,7 +24,7 @@ The following **required** functionality is completed:
 - [X] User can tap a post to go to a Post Details activity, which includes timestamp and caption.
 
 The following **additional** features are implemented:
-![](../../Downloads/PURPLEGRAM (1).gif
+
 
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
