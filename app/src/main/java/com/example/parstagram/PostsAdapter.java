@@ -1,6 +1,7 @@
 package com.example.parstagram;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,6 +79,15 @@ public class PostsAdapter extends
         holder.tvUsername.setText(post.getUser().getUsername());
         holder.tvTime.setText(post.getCreatedAt().toString());
         holder.tvDescription.setText(post.getDescription());
+
+        holder.ivPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, DetailActivity.class);
+                i.putExtra("post", post);
+                context.startActivity(i);
+            }
+        });
 
         Glide.with(context)
                 .load(post.getImage().getUrl())
