@@ -39,7 +39,7 @@ public class FeedActivity extends AppCompatActivity {
     public void queryPosts() {
         // Specify which class to query
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
-        query.addAscendingOrder("createdAt");
+        query.addDescendingOrder("createdAt");
         query.include(Post.KEY_USER);
         query.setLimit(20);
         // Specify the object id
