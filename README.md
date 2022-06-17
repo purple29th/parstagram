@@ -2,6 +2,9 @@
 
 **PurpleGram** is a photo sharing app using Parse as its backend.
 
+![Kapture 2022-06-17 at 14 05 30](https://user-images.githubusercontent.com/105090910/174401310-56af1c29-f982-4d9c-b0f2-7ba9eb8157e0.gif)
+
+
 Time spent: **25** hours spent in total
 
 ## User Stories
